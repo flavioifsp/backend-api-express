@@ -6,10 +6,16 @@ import nomeAleatorio from './config.js'
 const app = express()
 
 
-app.get('/', (req, res) => {
+app.post('/', (req, res) => {
   res.send(nomeAleatorio.ola)
+})
+
+
+app.get('/', (req, res) => {
+  res.json({message: "ola esta mensagme esta em json"})
 })
 
 app.listen(PORT, () => {
   console.log(`Server running on ${HOST}:${PORT}`)
 })
+
